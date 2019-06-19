@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 
 def calculate_outputs_and_gradients(inputs, model, target_label_idx, cuda=False):
+    target_label_idx = 159 # FASN
     # do the pre-processing
     predict_idx = None
     gradients = []

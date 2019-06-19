@@ -53,6 +53,10 @@ def visualize(attributions, image, positive_channel=G, negative_channel=R, polar
         attributions = polarity_function(attributions, polarity=polarity)
         channel = positive_channel
     
+    elif polarity == 'negative':
+        attributions = polarity_function(attributions, polarity=polarity)
+        channel = negative_channel
+    
     # convert the attributions to the gray scale
     attributions = convert_to_gray_scale(attributions)
     attributions = linear_transform(attributions, clip_above_percentile, clip_below_percentile, 0.0, plot_distribution=plot_distribution)
